@@ -58,7 +58,7 @@ declare namespace ShopifyBuy {
     export interface CheckoutResource {
         create(
             email?: string,
-            lineItems?: LineItem[],
+            lineItems?: Item[],
             shippingAddress?: Address,
             note?: string,
             customAttributes?: AttributeInput[]
@@ -66,14 +66,14 @@ declare namespace ShopifyBuy {
 
         fetch(id: string): Promise<Cart>;
 
-        addLineItems(checkoutId: string | number, lineItems: LineItem[]): Promise<Cart>;
+        addLineItems(checkoutId: string | number, lineItems: Item[]): Promise<Cart>;
 
         /**
          * Remove all line items from cart
          */
         clearLineItems(
             checkoutId: string | number,
-            lineItems: LineItem[]
+            lineItems: Item[]
         ): Promise<Cart>;
 
         /**
